@@ -32,6 +32,9 @@ class Employee(HasStaff):
     def sum_allocation(self):
         return self.allocation + sum(map(lambda e: e.sum_allocation(), self.staff))
 
+    def __str__(self):
+        return "%s, %s, %i, %i, %i" % (self.etype, self.name, self.allocation, self.sum_allocation(),len(self.staff))
+
 class Department(HasStaff):
     """A department at CenturyLink
 
@@ -45,4 +48,10 @@ class Department(HasStaff):
 
     def sum_allocation(self):
         return sum(map(lambda e: e.sum_allocation(), self.staff))
+
+    def __str__(self):
+        s = ["%s, %i" % (self.name, self.sum_allocation)]
+        return "%s, %s, %i, %i, %i" % (self.etype, self.name, self.allocation, self.sum_allocation(),len(self.staff))
+
+#    def __emp_str(self, indent, e)
 

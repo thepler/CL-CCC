@@ -35,5 +35,16 @@ def test_example():
         if len(e) > 2:
             x = d.find_employee_by_name(e[2])
 
-        x.add_staff([Employee(e[0], e[1], allocation[e[0]], [])])
+        e = Employee(e[0], e[1], allocation[e[0]], [])
+#        print e
+        g = e.__str__()
+        print g
+        x.add_staff([e])
 
+    assert d.sum_allocation() == 2100
+#    print d.sum_allocation
+
+
+if __name__=="__main__":
+    test_simple()
+    test_example()
