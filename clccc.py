@@ -5,7 +5,7 @@ class Employee(object):
 
     Attributes:
         name: A string representing the person's name.
-        allocation: warranted allocation for this person
+        allocation: warranted allocation for this employee
     """
 
     def __init__(self, name="", allocation=0, staff=[]):
