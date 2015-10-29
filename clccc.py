@@ -50,8 +50,16 @@ class Department(HasStaff):
         return sum(map(lambda e: e.sum_allocation(), self.staff))
 
     def __str__(self):
-        s = ["%s, %i" % (self.name, self.sum_allocation)]
-        return "%s, %s, %i, %i, %i" % (self.etype, self.name, self.allocation, self.sum_allocation(),len(self.staff))
+        s = ["%s, %i" % (self.name, self.sum_allocation())]
+        for e in self.staff:
+            s.extend(self.__emp_str(1, e))
 
-#    def __emp_str(self, indent, e)
+        return "\n".join(s)
+
+    def __emp_str(self, level, e):
+        all = ["  " * level + e.__str__()]
+        for s in e.staff:
+            all.extend(self.__emp_str(level + 1, s))
+
+        return all
 
