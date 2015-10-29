@@ -29,9 +29,7 @@ def test_example():
         ['Developer', 'Developer A'],
         ['QA Tester', 'QA Tester A'],
     ]
-#    staff = {'Manager B': 'Manager A', 'Developer A': 'Manager B', 'QA Tester
-#    e = ['Manager', 'Joe Man', 300]
-#    p = Employee(e)
-#    assert p.name == 'Joe Man'
-#
+    d = Department('Cloudy Coders')
+    for e in employees:
+        d.add_staff([Employee(e[0], e[1], allocation[e[0]], [])])
 
