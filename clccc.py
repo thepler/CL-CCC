@@ -1,6 +1,19 @@
 
+class HasStaff(object):
 
-class Employee(object):
+    def add_staff(self, more=[]):
+        self.staff.extend(more)
+
+    def find_employee_by_name(self, name):
+        if self.name == name:
+            return self
+
+        for e in self.staff:
+            found = e.find_employee_by_name(name)
+            if found:
+                return found
+
+class Employee(HasStaff):
     """An employee in a department at CenturyLink
 
     Attributes:
@@ -16,14 +29,10 @@ class Employee(object):
         self.staff = staff
         self.etype = etype
 
-    def add_staff(self, more=[]):
-        self.staff.extend(more)
-
     def sum_allocation(self):
         return self.allocation + sum(map(lambda e: e.sum_allocation(), self.staff))
 
-
-class Department(object):
+class Department(HasStaff):
     """A department at CenturyLink
 
     Attributes:
@@ -33,9 +42,6 @@ class Department(object):
     def __init__(self, name="", staff=[]):
         self.name = name
         self.staff = staff
-
-    def add_staff(self, more=[]):
-        self.staff.extend(more)
 
     def sum_allocation(self):
         return sum(map(lambda e: e.sum_allocation(), self.staff))

@@ -26,10 +26,14 @@ def test_example():
     employees = [
         ['Manager', 'Manager A'],
         ['Manager', 'Manager B'],
-        ['Developer', 'Developer A'],
-        ['QA Tester', 'QA Tester A'],
+        ['Developer', 'Developer A', 'Manager B'],
+        ['QA Tester', 'QA Tester A', 'Manager B'],
     ]
     d = Department('Cloudy Coders')
     for e in employees:
-        d.add_staff([Employee(e[0], e[1], allocation[e[0]], [])])
+        x = d
+        if len(e) > 2:
+            x = d.find_employee_by_name(e[2])
+
+        x.add_staff([Employee(e[0], e[1], allocation[e[0]], [])])
 
