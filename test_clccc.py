@@ -22,8 +22,13 @@ def test_simple():
     assert d.sum_allocation() == 1300
 
 def test_example():
-    pass
-#    allocation = {'Developer':1000, 'QA Tester':500, 'Manager':300} 
+    allocation = {'Developer':1000, 'QA Tester':500, 'Manager':300}
+    employees = [
+        ['Manager', 'Manager A'],
+        ['Manager', 'Manager B'],
+        ['Developer', 'Developer A'],
+        ['QA Tester', 'QA Tester A'],
+    ]
 #    staff = {'Manager B': 'Manager A', 'Developer A': 'Manager B', 'QA Tester
 #    e = ['Manager', 'Joe Man', 300]
 #    p = Employee(e)
