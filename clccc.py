@@ -5,6 +5,8 @@ class Employee(object):
     Attributes:
         name: A string representing the person's name.
         allocation: warranted allocation for this employee
+        etype: the employee type (Manager, Developer, etc)
+        staff: list of employees that report to this employee
     """
 
     # XXX use a set instead of a list to make sure no duplicates?
@@ -38,7 +40,7 @@ class Department(object):
 
     Attributes:
         name: name of this department
-        staff: list of employees in this department
+        staff: list of top level employees in this department
     """
 
     def __init__(self, name, staff):
