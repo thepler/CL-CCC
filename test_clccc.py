@@ -70,14 +70,12 @@ def test_deeper():
         ],
     }
     d = []
-#    d.append(make_department('Cloudy Coders', departments['Cloudy Coders'], allocation))
-#    d.append(make_department('Fluffy Typers', departments['Fluffy Typers'], allocation))
     for name, employees in departments.items():
-        print name
-        print employees
         d.append(make_department(name, employees, allocation))
 
-#    assert d.sum_allocation() == 2100
+    assert d[0].sum_allocation() == 6500
+    assert d[1].sum_allocation() == 25300
+
     return d
 
 if __name__=="__main__":
