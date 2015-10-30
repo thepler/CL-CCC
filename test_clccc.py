@@ -23,7 +23,7 @@ def test_simple():
     assert d.sum_allocation() == 1300
 
 def make_department(name, employees, allocation):
-    d = Department(name)
+    d = Department(name, [])
     for e in employees:
         x = d
         if len(e) > 2:
@@ -76,11 +76,11 @@ def test_deeper():
     }
     d = []
 #    d.append(make_department('Cloudy Coders', departments['Cloudy Coders'], allocation))
-    d.append(make_department('Fluffy Typers', departments['Fluffy Typers'], allocation))
-#    for name, employees in departments.items():
-#        print name
-#        print employees
-#        d.append(make_department(name, employees, allocation))
+#    d.append(make_department('Fluffy Typers', departments['Fluffy Typers'], allocation))
+    for name, employees in departments.items():
+        print name
+        print employees
+        d.append(make_department(name, employees, allocation))
 
 #    assert d.sum_allocation() == 2100
     return d
@@ -92,9 +92,8 @@ if __name__=="__main__":
             print d
         elif sys.argv[1] == 'deeper':
             d = test_deeper()
-#            print d
             print d[0]
-#            print d[1]
+            print d[1]
         else :
             pass
     else:
