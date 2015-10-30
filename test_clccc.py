@@ -22,6 +22,7 @@ def make_department(name, employees, allocation):
     for e in employees:
         x = d
         if len(e) > 2:
+            # find the manager
             x = d.find_employee_by_name(e[2])
 
         e = Employee(e[0], e[1], allocation[e[0]], [])
@@ -31,6 +32,8 @@ def make_department(name, employees, allocation):
 
 def test_example():
     allocation = {'Developer':1000, 'QA Tester':500, 'Manager':300}
+    # optional 3rd column is the manager, which must be
+    # declared before the employee
     employees = [
         ['Manager', 'Manager A'],
         ['Manager', 'Manager B', 'Manager A'],
@@ -43,6 +46,8 @@ def test_example():
 
 def test_deeper():
     allocation = {'Developer':1200, 'QA Tester':1500, 'Manager':1900}
+    # optional 3rd column is the manager, which must be
+    # declared before the employee
     departments = {
         'Cloudy Coders' : [
             ['Manager', 'Manager A'],
