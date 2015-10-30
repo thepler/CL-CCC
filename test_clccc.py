@@ -1,14 +1,9 @@
-def func(x):
-    return x + 1
-
-def test_answer():
-    assert func(3) == 4
 
 import sys
 from clccc import Employee, Department
 
 def test_simple():
-    d = Employee('Developer', 'John Doe', 1000)
+    d = Employee('Developer', 'John Doe', 1000, [])
     assert d.name == 'John Doe'
     assert d.etype == 'Developer'
     assert d.allocation == 1000
