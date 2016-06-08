@@ -1,4 +1,4 @@
-# CenturyLink Cloud Coding Challenge
+# coding challenge for a potential employer
 
 The code is in clccc.py, and the tests are in
 test_clccc.py
